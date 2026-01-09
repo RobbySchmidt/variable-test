@@ -91,6 +91,8 @@ body {
   --color-prime-500: '';
   --color-second: var(--color-second-500);
   --color-second-500: '';
+  --color-acc: var(--color-acc-500);
+  --color-acc-500: '';
   --round: var(--radius);
    
   --animate-accordion-down: accordion-down 0.2s ease-out;    
