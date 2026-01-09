@@ -16,7 +16,7 @@
         <div class="space-y-5"
         data-aos="fade-up" 
         :data-aos-delay="block.imageRight ? 200 : 400">
-          <div class="space-y-5 [&>h3]:text-f-xl [&>h3]:font-medium"
+          <div class="space-y-5 [&>h3]:text-f-xl [&>h3]:font-medium [&>h3]:text-acc"
             :class="path === '/karriere' ? 'custom-content' : ''" 
             v-if="block.text"
             v-html="block.text">
