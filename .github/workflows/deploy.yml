@@ -1,0 +1,62 @@
+# See https://zellwk.com/blog/github-actions-deploy/ an explanation of this code
+name: deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: yarn install
+      - name: 'Create env file'
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
+      - run: yarn build
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.MWSSH }}
+          known_hosts: unnecessary
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p ${{ secrets.MWPORT }} -H ${{ secrets.MWHOST }} >> ~/.ssh/known_hosts
+
+      - name: Stopping Service and delete Folders on Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.MWHOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.MWSSH }}
+          port: ${{ secrets.MWPORT }}
+          script: |
+            cd /home/${{ secrets.PROJECTID }}/html/${{ secrets.APPFOLDER }}
+            mittnitectl job stop
+            rm -rf .output
+            rm -rf .nuxt
+            mkdir .output
+            mkdir .nuxt
+
+      - name: Deploy nuxt folder with rsync
+        run: rsync -avz ./.nuxt/ ${{ secrets.USERNAME }}@${{ secrets.MWHOST }}:/home/${{ secrets.PROJECTID }}/html/${{ secrets.APPFOLDER }}/.nuxt
+
+      - name: Deploy output folder with rsync
+        run: rsync -avz ./.output/ ${{ secrets.USERNAME }}@${{ secrets.MWHOST }}:/home/${{ secrets.PROJECTID }}/html/${{ secrets.APPFOLDER }}/.output
+
+      - name: Restart Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.MWHOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.MWSSH }}
+          port: ${{ secrets.MWPORT }}
+          script: |
+            cd /home/${{ secrets.PROJECTID }}/html/${{ secrets.APPFOLDER }}
+            mittnitectl job start
