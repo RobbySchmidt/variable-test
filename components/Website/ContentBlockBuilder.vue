@@ -7,6 +7,7 @@
   const map = {
     block_hero_banner: resolveComponent('LazyBlocksHeroBanner'),
     block_references: resolveComponent('LazyBlocksReferences'),
+    block_reception: resolveComponent('LazyBlocksReception'),
     block_banner: resolveComponent('LazyBlocksBanner'),
     block_carousel: resolveComponent('LazyBlocksCarousel'),
     block_servicesBanner: resolveComponent('LazyBlocksServicesBanner'),
