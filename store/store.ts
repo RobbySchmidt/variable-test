@@ -36,33 +36,15 @@ export const useStore = defineStore('store', {
       })
 
       const style = data?.[0]
-      if (!style) return
 
       this.style = style
-
-      function normalizeCssLength(value?: string) {
-        if (!value) return null
-
-        // already has a unit
-        if (/\d+(px|rem|em|%)$/.test(value)) {
-          return value
-        }
-
-        // number as string → px
-        if (/^\d+$/.test(value)) {
-          return `${value}px`
-        }
-
-        return null
-      }
-      const radius = normalizeCssLength(style.radius?.rounded)
 
       const root = document.documentElement
 
       root.style.setProperty('--primary', style.primary_color?.color)
       root.style.setProperty('--secondary', style.secondary_color?.color)
       root.style.setProperty('--accent', style.accent_color?.color)
-      root.style.setProperty('--radius', radius)
+      root.style.setProperty('--radius', `${style.radius?.value}px`)
     },
   }
 });
