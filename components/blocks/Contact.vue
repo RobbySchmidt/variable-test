@@ -1,8 +1,8 @@
 <template>   
-  <div class="text-prime bg-white border-b border-prime">
+  <div class="text-primary bg-white border-b border-primary">
     <div class="container">
       <div class="lg:w-9/12 mx-auto grid md:grid-cols-2 text-f-lg font-medium">
-        <div class="border-b md:border-b-0 md:border-r border-prime py-f-16 px-4 space-y-f-6">
+        <div class="border-b md:border-b-0 md:border-r border-primary py-f-16 px-4 space-y-f-6">
           <div>
             <span 
               v-if="general.company_name">

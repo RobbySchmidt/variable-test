@@ -14,7 +14,7 @@
             v-for="(value, index) in block.content"
             data-aos="fade-up" 
             :data-aos-delay="index * 200">
-            <div class="bg-prime text-white p-4 space-y-36">
+            <div class="bg-primary text-white p-4 space-y-36">
               <div
                 v-if="value.title" 
                 v-html="value.title"

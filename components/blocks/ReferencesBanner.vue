@@ -1,10 +1,10 @@
 <template>
   <div 
-    class="relative py-f-24 px-12 bg-prime-400">
+    class="relative py-f-24 px-12 bg-primary-400">
     <div class="container">
       <div class="xl:w-9/12 mx-auto space-y-f-12">
         <h2
-          class="text-f-xl text-prime-gray"
+          class="text-f-xl text-primary-gray"
           v-if="block.title">
           {{ block.title }}
         </h2>

@@ -5,7 +5,7 @@
         <div
           v-if="block.title"
           v-html="formatText(block.title)"
-          class="text-prime text-f-xl font-medium">
+          class="text-primary text-f-xl font-medium">
         </div>
 
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-f-12 text-f-lg">
@@ -21,7 +21,7 @@
               alt="">
               <span 
                 v-if="adv.title" 
-                class="block w-fit mx-auto text-prime">
+                class="block w-fit mx-auto text-primary">
                 {{ adv.title }}
               </span>
               <div 

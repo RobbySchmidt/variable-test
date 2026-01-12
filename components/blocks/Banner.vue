@@ -1,7 +1,7 @@
 <template>
   <div 
     v-if="block.image"
-    :class="block.boxed ? '' : 'bg-prime'"
+    :class="block.boxed ? '' : 'bg-primary'"
     :style="!block.boxed ? { backgroundImage: 'url(' + getAssetUrl() + block.image.filename_disk + '?format=auto)' } : {}">
     <div class="container" 
       :class="block.boxed ? 'pb-f-24' : 'px-4'">
@@ -17,7 +17,7 @@
             }">
           <div 
             class="text-f-2xl  font-medium"
-            :class="path === '/referenzen' && block.boxed ? 'text-prime' : 'text-white'" 
+            :class="path === '/referenzen' && block.boxed ? 'text-primary' : 'text-white'" 
             v-if="block.title"
             v-html="formatText(block.title)">
           </div>

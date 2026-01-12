@@ -16,28 +16,28 @@
           data-aos-delay="400">
           <h1
             v-if="job.title"
-            class="text-f-xl font-medium text-prime">
+            class="text-f-xl font-medium text-primary">
             {{ job.title }}
           </h1>
 
-          <div class="text-prime text-base pb-3">
+          <div class="text-primary text-base pb-3">
             <span
               v-if="job.location"
-              class="border-b border-prime py-3 block">
+              class="border-b border-primary py-3 block">
               {{ job.location }}
             </span>
             <span
-              class="border-b border-prime py-3 block" 
+              class="border-b border-primary py-3 block" 
               v-if="job.start">
               {{ job.start }}
             </span>
             <span
-              class="border-b border-prime py-3 block" 
+              class="border-b border-primary py-3 block" 
               v-if="job.contract">
               {{ job.contract }}
             </span>
             <span
-              class="border-b border-prime py-3 block" 
+              class="border-b border-primary py-3 block" 
               v-if="job.hours">
               {{ job.hours }}
             </span>

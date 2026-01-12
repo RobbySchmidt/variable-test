@@ -19,7 +19,7 @@
               height="500">
               <div>
   
-                <h3 class="text-prime mb-2">
+                <h3 class="text-primary mb-2">
                   {{ item.name }}<br>
                   {{ item.position }}
                 </h3>
@@ -50,7 +50,7 @@
                 class="block w-56 h-56 rounded-full mx-auto"
                 width="500"
                 height="500">
-                <h3 class="text-prime mt-12 mb-2">
+                <h3 class="text-primary mt-12 mb-2">
                   {{ item.name }}<br>
                   {{ item.position }}
                 </h3>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="md:mx-auto xl:max-w-[1100px] 3xl:max-w-[1300px] px-4 md:px-8 xl:px-0 space-y-6 xl:space-y-f-12 py-f-24">
-      <div class="bg-background rounded-sm overflow-hidden relative">
+      <div class="bg-background rounded overflow-hidden relative">
         <div v-if="loadBot" class="flex items-center gap-2 w-fit mx-auto h-[300px]">
           <div class="w-4 h-4 rounded-full bg-primary animate-bounce [animation-delay:.7s]"></div>
           <div class="w-4 h-4 rounded-full bg-primary animate-bounce [animation-delay:.3s]"></div>

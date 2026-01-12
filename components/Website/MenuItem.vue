@@ -1,13 +1,13 @@
 <template>  
   <li 
     v-if="!menuItem.has_children && checkPageSlug(menuItem)"
-    class="lg:last:[&>a]:bg-prime lg:last:[&>a]:text-white last:[&>a]:lg:px-20 last:ml-auto text-white">
+    class="lg:last:[&>a]:bg-primary lg:last:[&>a]:text-white last:[&>a]:lg:px-20 last:ml-auto text-white">
     <NuxtLink 
       :href="getUrl(menuItem)"
       :target="menuItem.open_in_new_tab ? '_blank' : '_self'" 
       @click="store.menuOpen = !store.menuOpen"
-      class="block py-4 lg:py-3 lg:text-prime transition duration-300 ease-in-out border-b lg:border-b-6 border-white lg:border-transparent lg:hover:border-prime active:border-prime w-full lg:w-fit px-4 lg:px-0"
-      activeClass="lg:!border-prime bg-white text-prime">
+      class="block py-4 lg:py-3 lg:text-primary transition duration-300 ease-in-out border-b lg:border-b-6 border-white lg:border-transparent lg:hover:border-primary active:border-primary w-full lg:w-fit px-4 lg:px-0"
+      activeClass="lg:!border-primary bg-white text-primary">
 
       <template v-if="menuItem.label">
         {{ menuItem.label }}
@@ -19,12 +19,12 @@
   </li>
   <li 
     v-else
-    class="relative z-10 first:border-t border-prime md:border-none menu-item-has-children">
+    class="relative z-10 first:border-t border-primary md:border-none menu-item-has-children">
     <button
       type="button"
       aria-controls="submenu"
       @click="store.submenuOpen = !store.submenuOpen" 
-      class="px-4 lg:px-0 box-border flex items-center justify-between w-full text-white lg:text-prime transition-all duration-300 ease-in-out py-3 border-b border-white lg:border-transparent lg:border-b-6 lg:hover:border-prime group cursor-pointer">
+      class="px-4 lg:px-0 box-border flex items-center justify-between w-full text-white lg:text-primary transition-all duration-300 ease-in-out py-3 border-b border-white lg:border-transparent lg:border-b-6 lg:hover:border-primary group cursor-pointer">
       
       <template v-if="menuItem.label">
         {{ menuItem.label }}
@@ -33,7 +33,7 @@
         {{ menuItem.title }}
       </template> 
       <ChevronDown
-        class="ml-1 transition duration-100 ease-in-out text-white lg:text-prime" 
+        class="ml-1 transition duration-100 ease-in-out text-white lg:text-primary" 
         :class="{'-rotate-90 md:-rotate-0': !store.submenuOpen,' md:rotate-180': store.submenuOpen }"/>
     </button>
     <ul
@@ -61,7 +61,7 @@
         <li
           v-if="checkPageSlug(submenuItem)"
           :style="'transition-delay:'+ ((index+1+0.3)*0.5)*150 + 'ms'"
-          class="last:border-b border-t border-prime duration-300 ease-[cubic-bezier(.51,1.03,.89,.94)]"
+          class="last:border-b border-t border-primary duration-300 ease-[cubic-bezier(.51,1.03,.89,.94)]"
           :class="{
             'translate-x-[0] opacity-100': $device.isMobileOrTablet && store.submenuOpen,
             'translate-x-[300px] opacity-0 !delay-0': $device.isMobileOrTablet && !store.submenuOpen
@@ -70,8 +70,8 @@
             :href="getUrl(submenuItem)"
             :target="submenuItem.open_in_new_tab ? '_blank' : '_self'"
             @click="store.submenuOpen = false"
-            class="block w-full p-4 transition duration-300 ease-in-out md:py-2 lg:hover:text-prime active:text-prime"
-            activeClass="lg:!text-prime">
+            class="block w-full p-4 transition duration-300 ease-in-out md:py-2 lg:hover:text-primary active:text-primary"
+            activeClass="lg:!text-primary">
             
             <template v-if="submenuItem.label">
                 {{ submenuItem.label }}

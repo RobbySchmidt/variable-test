@@ -7,7 +7,7 @@
       'translate-x-full': !store.menuOpen
     }"
   >
-    <nav id="main-menu" class="h-screen lg:h-full bg-prime lg:bg-transparent">          
+    <nav id="main-menu" class="h-screen lg:h-full bg-primary lg:bg-transparent">          
       <ul
         v-if="navigation.items"
         class="lg:space-x-8 lg:flex lg:items-center"

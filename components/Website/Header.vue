@@ -1,7 +1,7 @@
 <template>  
   <header 
     id="siteHeader" 
-    class="sticky top-0 z-40 w-full bg-white border-b border-prime flex items-center justify-between px-4 md:pl-8 lg:pr-0"
+    class="sticky top-0 z-40 w-full bg-white border-b border-primary flex items-center justify-between px-4 md:pl-8 lg:pr-0"
   >    
     <NuxtLink href="/">
       <!-- <img
@@ -21,9 +21,9 @@
       aria-label="Navigation öffnen"            
       class="focus:outline-none relative w-7 h-14 lg:hidden"
     >
-        <span  class="block absolute h-0.5 w-7 bg-prime transform transition duration-300 ease-in-out" :class="{'rotate-45': store.menuOpen,' -translate-y-1.5': !store.menuOpen }"></span>
-        <span  class="block absolute  h-0.5 w-5 bg-prime transform transition duration-300 ease-in-out" :class="{'opacity-0': store.menuOpen } "></span>
-        <span  class="block absolute  h-0.5 w-7 bg-prime transform  transition duration-300 ease-in-out" :class="{'-rotate-45': store.menuOpen, ' translate-y-1.5': !store.menuOpen}"></span>
+        <span  class="block absolute h-0.5 w-7 bg-primary transform transition duration-300 ease-in-out" :class="{'rotate-45': store.menuOpen,' -translate-y-1.5': !store.menuOpen }"></span>
+        <span  class="block absolute  h-0.5 w-5 bg-primary transform transition duration-300 ease-in-out" :class="{'opacity-0': store.menuOpen } "></span>
+        <span  class="block absolute  h-0.5 w-7 bg-primary transform  transition duration-300 ease-in-out" :class="{'-rotate-45': store.menuOpen, ' translate-y-1.5': !store.menuOpen}"></span>
     </button>
   </header>  
 </template>
