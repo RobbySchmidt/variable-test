@@ -8,7 +8,7 @@
           alt="">
       </div>
       <div class="space-y-f-6">
-        <h1 class="text-f-2xl text-prime">Deine Bewerbung wurde erfolgreich verschickt.</h1>
+        <h1 class="text-f-2xl text-primary">Deine Bewerbung wurde erfolgreich verschickt.</h1>
         <p class="text-f-lg">Wir freuen uns sehr über dein Interesse! 
           Du erhältst so schnell wie möglich eine Rückmeldung von uns.
         </p>

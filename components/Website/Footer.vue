@@ -61,11 +61,11 @@
         </div>
       </div>
     </div>
-    <div class="text-prime bg-white border-y border-prime"
+    <div class="text-primary bg-white border-y border-primary"
       :class="route.path === '/kontakt' ? 'hidden' : ''">
       <div class="container">
         <div class="lg:w-9/12 mx-auto grid md:grid-cols-2 text-f-lg">
-          <div class="border-b md:border-b-0 md:border-r border-prime py-f-16 px-4">
+          <div class="border-b md:border-b-0 md:border-r border-primary py-f-16 px-4">
             <span 
               v-if="general.company_name">
               {{ general.company_name }}
@@ -95,13 +95,13 @@
       </div>
     </div>
     <div 
-      class="text-prime bg-white border-b border-prime"
+      class="text-primary bg-white border-b border-primary"
       :class="route.path === '/kontakt' ? 'border-t' : ''">
       <div class="container">
         <div class="lg:w-9/12 mx-auto grid md:grid-cols-2 text-xs">           
           <div 
             v-if="general.additional_field_left"
-            class="border-b md:border-b-0 md:border-r border-prime py-3 px-4"
+            class="border-b md:border-b-0 md:border-r border-primary py-3 px-4"
             v-html="general.additional_field_left">
           </div>
       
@@ -113,7 +113,7 @@
         </div>
       </div>
     </div>
-    <div class="text-prime bg-white">
+    <div class="text-primary bg-white">
       <div class="container">
         <div class="lg:w-9/12 mx-auto grid md:grid-cols-2 gap-f-12 text-xs px-4">
           <ul>
@@ -123,7 +123,7 @@
                 v-for="link in navigation.items"
                 :to="link.page.slug"
                 :target="link.open_in_new_tab ? '_blank' : ''"
-                class="hover:text-prime-gray-300 duration-300 ease-in-out"
+                class="hover:text-primary-gray-300 duration-300 ease-in-out"
                 >{{ link.title }}
               </NuxtLink>
             </li>

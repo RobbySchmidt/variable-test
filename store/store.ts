@@ -59,9 +59,9 @@ export const useStore = defineStore('store', {
 
       const root = document.documentElement
 
-      root.style.setProperty('--color-prime-500', style.primary_color?.color)
-      root.style.setProperty('--color-second-500', style.secondary_color?.color)
-      root.style.setProperty('--color-acc-500', style.accent_color?.color)
+      root.style.setProperty('--primary', style.primary_color?.color)
+      root.style.setProperty('--secondary', style.secondary_color?.color)
+      root.style.setProperty('--accent', style.accent_color?.color)
       root.style.setProperty('--radius', radius)
     },
   }

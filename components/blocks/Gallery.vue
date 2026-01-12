@@ -34,10 +34,10 @@
             :aria-label="'Bild ' + index + 1"
             class="cursor-pointer">
             <span v-if="index == selectedIndexPag">
-              <span class="bg-prime ring ring-prime  w-4 h-4 block rounded-full"></span>
+              <span class="bg-primary ring ring-primary  w-4 h-4 block rounded-full"></span>
             </span>
             <span v-else>
-              <span class="ring ring-prime w-4 h-4 block rounded-full"></span>
+              <span class="ring ring-primary w-4 h-4 block rounded-full"></span>
             </span>
           </button>
         </div>

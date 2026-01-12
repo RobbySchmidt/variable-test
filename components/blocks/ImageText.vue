@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-second relative pt-f-24"
+  <div class="bg-secondary relative pt-f-24"
     :class="block.padding_bottom ? 'pb-f-24' : ''">
     <div class="container p-4">
       <div class="lg:w-9/12 mx-auto grid xl:grid-cols-2 gap-f-12 items-start">
@@ -16,7 +16,7 @@
         <div class="space-y-5"
         data-aos="fade-up" 
         :data-aos-delay="block.imageRight ? 200 : 400">
-          <div class="space-y-5 [&>h3]:text-f-xl [&>h3]:font-medium [&>h3]:text-acc"
+          <div class="space-y-5 [&>h3]:text-f-xl [&>h3]:font-medium [&>h3]:text-accent"
             :class="path === '/karriere' ? 'custom-content' : ''" 
             v-if="block.text"
             v-html="block.text">

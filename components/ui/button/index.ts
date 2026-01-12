@@ -12,7 +12,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-prime text-black rounded hover:bg-white hover:text-prime',
+          'bg-primary text-black rounded hover:bg-white hover:text-primary',
         destructive:
           'bg-red-500 text-white shadow-xs md:hover:bg-red-600 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
         outline:
@@ -22,9 +22,9 @@ export const buttonVariants = cva(
         ghost:
           'text-black text-base',
         link: 'text-primary underline-offset-4 md:hover:underline',
-        yellow: 'bg-yellow-500 text-prime w-full',
-        primary: 'text-white text-base font-normal border-1 relative before:content before:absolute before:top-0 before:left-0 before:w-0 before:h-full before:bg-white lg:hover:before:w-full z-10 before:-z-10 before:duration-300 lg:hover:text-prime duration-300 ease-in-out',
-        primary_inverted: 'text-prime text-base font-normal border-1 border-prime relative before:content before:absolute before:top-0 before:left-0 before:w-0 before:h-full before:bg-prime lg:hover:before:w-full z-10 before:-z-10 before:duration-300 lg:hover:text-white duration-300 ease-in-out',
+        yellow: 'bg-yellow-500 text-primary w-full',
+        primary: 'text-white text-base font-normal border-1 relative before:content before:absolute before:top-0 before:left-0 before:w-0 before:h-full before:bg-white lg:hover:before:w-full z-10 before:-z-10 before:duration-300 lg:hover:text-primary duration-300 ease-in-out',
+        primary_inverted: 'text-primary text-base font-normal border-1 border-primary relative before:content before:absolute before:top-0 before:left-0 before:w-0 before:h-full before:bg-primary lg:hover:before:w-full z-10 before:-z-10 before:duration-300 lg:hover:text-white duration-300 ease-in-out',
         button_red: 'bg-secondary text-white rounded-none px-6 py-2 lg:hover:bg-black',
         button_ghost: 'text-lg text-secondary',
         transparent: ''
