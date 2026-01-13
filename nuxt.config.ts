@@ -1,30 +1,8 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
-
 export default defineNuxtConfig({
-  css: ['~/assets/css/tailwind.css'],
-
-  vite: {
-    plugins: [
-      tailwindcss(),
-    ],
-  },
-
-  modules: [
-    'shadcn-nuxt',
-    '@pinia/nuxt',
-    'nuxt-directus',
-    '@nuxtjs/device',
-    '@vueuse/motion/nuxt',
-    'v-gsap-nuxt',
-    "nuxt-aos"
-  ],
-  
-  components: [
-    // Disable prefixing base components with `Base`
-    { path: '~/components/base', pathPrefix: false },
-    // Auto import components from `~/components`
-    '~/components',
-  ],
+  compatibilityDate: '2025-07-15',
+  devtools: { enabled: true },
 
   app: {
     head: {
@@ -36,23 +14,15 @@ export default defineNuxtConfig({
         {rel:"icon", type:"image/png", sizes:"96x96", href:"/favicon-96x96.png"},
         {rel:"icon", type:"image/svg+xml",  href:"/favicon.svg"},
         {rel:"shortcut icon",  href:"/favicon.ico"},
-        {rel:"manifest", href:"/site.webmanifest"}
+        {rel:"manifest", href:"/site.webmanifest"},
       ],
       meta: [
         {name:"apple-mobile-web-app-title", content:"Ingenieurbüro Gleisplan – Wir gestalten Zukunft."},
 
       ]
     },
-    pageTransition: {
-      name: 'page',
-      mode: 'out-in', // default
-      appear: true,
-    },
-  },
-
-  shadcn: {
-    prefix: '',
-    componentDir: './components/ui'
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
   aos: {
@@ -76,24 +46,54 @@ export default defineNuxtConfig({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
   },
 
+  // nuxt.config.ts
+  components: [
+    { path: '~/components', pathPrefix: false, ignore: ['ui/**'] },
+    { path: '~/components/ui', pathPrefix: true }
+  ],
+
+
+  css: ['~/assets/css/tailwind.css'],
+  
   directus: {      
     url: process.env.DIRECTUS_URL,
     autoFetch: false,
   },
+
+  image: {
+    directus: {
+      baseURL: process.env.DIRECTUS_URL + '/assets/'
+    }
+  },
+
+  modules: [
+    'shadcn-nuxt',
+    '@nuxt/image',
+    'nuxt-directus',
+    '@nuxtjs/device',
+    '@nuxtjs/sitemap',
+    '@pinia/nuxt',
+    'nuxt-aos',
+  ],
+
  
   runtimeConfig: {
     public: {
-      directusUrl: process.env.DIRECTUS_URL,
+      siteName: process.env.SITE_NAME,
+      siteUrl: process.env.SITE_URL,
+      directusUrl: process.env.DIRECTUS_URL
     },
     nodemailerConfig: {
       host: process.env.EMAIL_HOST,
       emailTo: process.env.EMAIL_TO,
-      port: 465,
-      secure: true,
+      port: 587,
+      secure: false,
+      requireTLS: true,
       auth: {
         user: process.env.EMAIL_ADDRESS,
         pass: process.env.EMAIL_SECRET,
       },
+      tls: { rejectUnauthorized: true },
       connectionTimeout: 15000,
       greetingTimeout: 15000,
       socketTimeout: 30000,
@@ -101,7 +101,23 @@ export default defineNuxtConfig({
     redirects: false,
   },
   
-  devtools: { enabled: false },
-
-  compatibilityDate: '2025-04-10'
+  shadcn: {
+    /**
+     * Prefix for all the imported component.
+     * @default "Ui"
+     */
+    prefix: '',
+    /**
+     * Directory that the component lives in.
+     * Will respect the Nuxt aliases.
+     * @link https://nuxt.com/docs/api/nuxt-config#alias
+     * @default "@/components/ui"
+     */
+    componentDir: '@/components/ui'
+  },
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
 })
